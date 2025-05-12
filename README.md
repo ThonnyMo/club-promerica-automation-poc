@@ -57,6 +57,19 @@ El proyecto utiliza bloques **`TRY`**, **`EXCEPT`** y **`FINALLY`** para manejar
 
 
 
+### 2. **Explicación sobre el método "Selenium is initialized"**
+El siguiente bloque de código:
+
+```robot
+Selenium is initialized
+    Set Selenium Speed    ${SELENIUM_SPEED}
+    Set Selenium Timeout  ${SELENIUM_TIMEOUT}
+```
+Está diseñado para configurar los parámetros de Selenium antes de realizar cualquier acción en la página. Set Selenium Speed ajusta la velocidad de las acciones realizadas por Selenium (por ejemplo, para hacer que los clics o desplazamientos sean más lentos, lo que puede ser útil para pruebas visuales). Set Selenium Timeout establece el tiempo máximo de espera para que Selenium intente localizar un elemento en la página antes de fallar.
+
+
+
+
 ## Uso del Page Object Model (POM)
 
 Este proyecto está estructurado utilizando el patrón **Page Object Model (POM)** para separar la lógica de negocio de los elementos de la interfaz de usuario:
@@ -98,6 +111,22 @@ Given The user opens club promerica page
 When User access Tab     ${TAB_PROMO_DESCUENTO}    ${BENEFICIOS_EPIC_IMAGE}
 Then User access Tab    ${TAB_CONTACTENOS}     ${VALIDACION_CONTACTENOS_TAB}
 ```
+
+
+## Esperas en Robot Framework
+
+En Robot Framework, muchos de los métodos integrados, como **`Wait Until Page Contains Element`**, ya tienen embebida la funcionalidad de esperar a que el elemento esté presente en la página antes de continuar con la siguiente acción. 
+
+Por ejemplo, el siguiente método:
+
+```robot
+Wait Until Page Contains Element    ${tab_xpath}    timeout=10s
+```
+
+Este comando espera hasta que el elemento especificado por el XPath (${tab_xpath}) sea encontrado en la página dentro del tiempo de espera definido (en este caso, 10 segundos). Si el elemento no se encuentra en ese tiempo, el comando fallará, lo que permite manejar de manera eficiente las esperas sin necesidad de configurar explícitamente Implicit o Explicit Waits como en Selenium con Java.
+
+Esto hace que las pruebas sean más estables, ya que no es necesario configurar explícitamente las esperas como en Selenium con Java, donde se pueden usar WebDriverWait y otras estrategias como Implicit Waits.
+
 
 
 ## Cómo Revisar el Reporte de Ejecución
