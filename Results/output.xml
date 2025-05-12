@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.2 on win32)" generated="20250511 20:16:16.653" rpa="false" schemaversion="4">
+<suite id="s1" name="Navigation Test" source="C:\Users\erbin.morales\Documents\T\T\club-promerica-automation-poc\Tests\navigation_test.robot">
+<test id="s1-t1" name="Complete Navigation and Interaction Flow ClubPromerica" line="15">
+<kw name="When The user opens club promerica page" library="common">
+<kw name="Given Selenium is initialized" library="common">
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${SELENIUM_SPEED}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20250511 20:16:16.971" endtime="20250511 20:16:16.971"/>
+</kw>
+<kw name="Set Selenium Timeout" library="SeleniumLibrary">
+<arg>${SELENIUM_TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" starttime="20250511 20:16:16.971" endtime="20250511 20:16:16.971"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:16.970" endtime="20250511 20:16:16.971"/>
+</kw>
+<kw name="And Browser is Opened And Maximized" library="common">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20250511 20:16:16.972" level="INFO">Opening browser 'chrome' to base url 'https://www.clubpromerica.com/costarica/'.</msg>
+<status status="PASS" starttime="20250511 20:16:16.971" endtime="20250511 20:16:26.019"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20250511 20:16:26.021" endtime="20250511 20:16:26.296"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:16.971" endtime="20250511 20:16:26.296"/>
+</kw>
+<kw name="Then Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${HOME_PAGE_TEXT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:26.296" endtime="20250511 20:16:26.534"/>
+</kw>
+<kw name="And Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Screenshot/screenshot_home_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20250511 20:16:26.930" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshot/screenshot_home_page.png"&gt;&lt;img src="Screenshot/screenshot_home_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250511 20:16:26.534" endtime="20250511 20:16:26.930"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:16.970" endtime="20250511 20:16:26.930"/>
+</kw>
+<kw name="Then User access Tab" library="common">
+<arg>${TAB_PROMO_DESCUENTO}</arg>
+<arg>${BENEFICIOS_EPIC_IMAGE}</arg>
+<try>
+<branch type="TRY">
+<kw name="Log" library="BuiltIn">
+<arg>Intentando acceder a la tab: ${tab_xpath}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:26.931" level="INFO">Intentando acceder a la tab: xpath=//a[@href='/costarica/promociones-y-descuentos']</msg>
+<status status="PASS" starttime="20250511 20:16:26.931" endtime="20250511 20:16:26.932"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${tab_xpath}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:26.932" endtime="20250511 20:16:27.149"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${tab_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250511 20:16:27.149" level="INFO">Clicking element 'xpath=//a[@href='/costarica/promociones-y-descuentos']'.</msg>
+<status status="PASS" starttime="20250511 20:16:27.149" endtime="20250511 20:16:30.345"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${element_after_accesing_tab}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:30.346" endtime="20250511 20:16:30.604"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Screenshot/screenshot_selected_tab.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20250511 20:16:31.021" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshot/screenshot_selected_tab.png"&gt;&lt;img src="Screenshot/screenshot_selected_tab.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250511 20:16:30.605" endtime="20250511 20:16:31.021"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Navegación exitosa a la tab</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:31.023" level="INFO">Navegación exitosa a la tab</msg>
+<status status="PASS" starttime="20250511 20:16:31.022" endtime="20250511 20:16:31.023"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:26.931" endtime="20250511 20:16:31.023"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>Error al acceder a la tab</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:31.023" endtime="20250511 20:16:31.023"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>No se pudo acceder a la tab</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:31.023" endtime="20250511 20:16:31.024"/>
+</kw>
+<status status="NOT RUN" starttime="20250511 20:16:31.023" endtime="20250511 20:16:31.024"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log" library="BuiltIn">
+<arg>Finalizando intento de navegación a la tab.</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:31.024" level="INFO">Finalizando intento de navegación a la tab.</msg>
+<status status="PASS" starttime="20250511 20:16:31.024" endtime="20250511 20:16:31.024"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:31.024" endtime="20250511 20:16:31.024"/>
+</branch>
+<status status="PASS" starttime="20250511 20:16:26.931" endtime="20250511 20:16:31.024"/>
+</try>
+<status status="PASS" starttime="20250511 20:16:26.931" endtime="20250511 20:16:31.024"/>
+</kw>
+<kw name="Then User access Tab" library="common">
+<arg>${TAB_CONTACTENOS}</arg>
+<arg>${VALIDACION_CONTACTENOS_TAB}</arg>
+<try>
+<branch type="TRY">
+<kw name="Log" library="BuiltIn">
+<arg>Intentando acceder a la tab: ${tab_xpath}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:31.026" level="INFO">Intentando acceder a la tab: xpath=//a[@href='/costarica/contactus']</msg>
+<status status="PASS" starttime="20250511 20:16:31.026" endtime="20250511 20:16:31.026"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${tab_xpath}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:31.026" endtime="20250511 20:16:31.243"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${tab_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250511 20:16:31.244" level="INFO">Clicking element 'xpath=//a[@href='/costarica/contactus']'.</msg>
+<status status="PASS" starttime="20250511 20:16:31.243" endtime="20250511 20:16:33.732"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${element_after_accesing_tab}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:33.732" endtime="20250511 20:16:33.954"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Screenshot/screenshot_selected_tab.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20250511 20:16:34.348" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshot/screenshot_selected_tab.png"&gt;&lt;img src="Screenshot/screenshot_selected_tab.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250511 20:16:33.954" endtime="20250511 20:16:34.348"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Navegación exitosa a la tab</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:34.348" level="INFO">Navegación exitosa a la tab</msg>
+<status status="PASS" starttime="20250511 20:16:34.348" endtime="20250511 20:16:34.349"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:31.026" endtime="20250511 20:16:34.349"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>Error al acceder a la tab</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:34.349" endtime="20250511 20:16:34.349"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>No se pudo acceder a la tab</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:34.349" endtime="20250511 20:16:34.349"/>
+</kw>
+<status status="NOT RUN" starttime="20250511 20:16:34.349" endtime="20250511 20:16:34.349"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log" library="BuiltIn">
+<arg>Finalizando intento de navegación a la tab.</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:34.350" level="INFO">Finalizando intento de navegación a la tab.</msg>
+<status status="PASS" starttime="20250511 20:16:34.349" endtime="20250511 20:16:34.350"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:34.349" endtime="20250511 20:16:34.350"/>
+</branch>
+<status status="PASS" starttime="20250511 20:16:31.025" endtime="20250511 20:16:34.350"/>
+</try>
+<status status="PASS" starttime="20250511 20:16:31.025" endtime="20250511 20:16:34.350"/>
+</kw>
+<kw name="Then User Fills Contact Us Form" library="contactenosTabPO">
+<arg>${NAME}</arg>
+<arg>${EMAIL_ADDRESS}</arg>
+<try>
+<branch type="TRY">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_NAME}</arg>
+<arg>${name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250511 20:16:34.353" level="INFO">Typing text 'Automated user' into text field 'id=FullName'.</msg>
+<status status="PASS" starttime="20250511 20:16:34.352" endtime="20250511 20:16:35.081"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250511 20:16:35.081" level="INFO">Typing text 'automateduser@gmail.com' into text field 'id=Email'.</msg>
+<status status="PASS" starttime="20250511 20:16:35.081" endtime="20250511 20:16:35.807"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_COMMENT}</arg>
+<arg>${COMMENT_TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20250511 20:16:35.811" level="INFO">Typing text 'Este es un mensaje de prueba automatizado.' into text field 'id=Enquiry'.</msg>
+<status status="PASS" starttime="20250511 20:16:35.808" endtime="20250511 20:16:36.567"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BUTTON_SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250511 20:16:36.567" level="INFO">Clicking element 'name=send-email'.</msg>
+<status status="PASS" starttime="20250511 20:16:36.567" endtime="20250511 20:16:39.036"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${SUCCESS_MESSAGE}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:39.036" endtime="20250511 20:16:39.252"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:34.351" endtime="20250511 20:16:39.252"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>Error al enviar el formulario de contacto</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:39.252" endtime="20250511 20:16:39.252"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>No se pudo enviar el formulario</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:39.252" endtime="20250511 20:16:39.252"/>
+</kw>
+<status status="NOT RUN" starttime="20250511 20:16:39.252" endtime="20250511 20:16:39.252"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log" library="BuiltIn">
+<arg>Finalizando intento de enviar formulario</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:39.253" level="INFO">Finalizando intento de enviar formulario</msg>
+<status status="PASS" starttime="20250511 20:16:39.253" endtime="20250511 20:16:39.253"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:39.252" endtime="20250511 20:16:39.253"/>
+</branch>
+<status status="PASS" starttime="20250511 20:16:34.351" endtime="20250511 20:16:39.253"/>
+</try>
+<status status="PASS" starttime="20250511 20:16:34.351" endtime="20250511 20:16:39.253"/>
+</kw>
+<kw name="Then User access Tab" library="common">
+<arg>${TAB_COMERCIOS}</arg>
+<arg>${VALIDACION_COMERCIOS_TAB}</arg>
+<try>
+<branch type="TRY">
+<kw name="Log" library="BuiltIn">
+<arg>Intentando acceder a la tab: ${tab_xpath}</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:39.254" level="INFO">Intentando acceder a la tab: xpath=//a[@href='/costarica/comercios-2']</msg>
+<status status="PASS" starttime="20250511 20:16:39.254" endtime="20250511 20:16:39.254"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${tab_xpath}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:39.254" endtime="20250511 20:16:39.469"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${tab_xpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20250511 20:16:39.469" level="INFO">Clicking element 'xpath=//a[@href='/costarica/comercios-2']'.</msg>
+<status status="PASS" starttime="20250511 20:16:39.469" endtime="20250511 20:16:42.797"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${element_after_accesing_tab}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20250511 20:16:42.797" endtime="20250511 20:16:43.014"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>Screenshot/screenshot_selected_tab.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20250511 20:16:43.470" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshot/screenshot_selected_tab.png"&gt;&lt;img src="Screenshot/screenshot_selected_tab.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20250511 20:16:43.014" endtime="20250511 20:16:43.470"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Navegación exitosa a la tab</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:43.470" level="INFO">Navegación exitosa a la tab</msg>
+<status status="PASS" starttime="20250511 20:16:43.470" endtime="20250511 20:16:43.470"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:39.254" endtime="20250511 20:16:43.470"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>Error al acceder a la tab</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:43.471" endtime="20250511 20:16:43.471"/>
+</kw>
+<kw name="Fail" library="BuiltIn">
+<arg>No se pudo acceder a la tab</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:43.471" endtime="20250511 20:16:43.471"/>
+</kw>
+<status status="NOT RUN" starttime="20250511 20:16:43.471" endtime="20250511 20:16:43.471"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log" library="BuiltIn">
+<arg>Finalizando intento de navegación a la tab.</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:43.472" level="INFO">Finalizando intento de navegación a la tab.</msg>
+<status status="PASS" starttime="20250511 20:16:43.472" endtime="20250511 20:16:43.472"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:43.471" endtime="20250511 20:16:43.472"/>
+</branch>
+<status status="PASS" starttime="20250511 20:16:39.254" endtime="20250511 20:16:43.472"/>
+</try>
+<status status="PASS" starttime="20250511 20:16:39.253" endtime="20250511 20:16:43.472"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Capturas de pantalla de Home Page y tab navegada guardadas en Results/Screenshot</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:43.473" level="INFO">Capturas de pantalla de Home Page y tab navegada guardadas en Results/Screenshot</msg>
+<status status="PASS" starttime="20250511 20:16:43.473" endtime="20250511 20:16:43.473"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Reporte generado en la carpeta Results</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:43.474" level="INFO">Reporte generado en la carpeta Results</msg>
+<status status="PASS" starttime="20250511 20:16:43.474" endtime="20250511 20:16:43.474"/>
+</kw>
+<try>
+<branch type="TRY">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20250511 20:16:43.475" endtime="20250511 20:16:46.055"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:43.475" endtime="20250511 20:16:46.055"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>Error al cerrar navegadores e instancias de Selenium WebDriver</arg>
+<arg>level=ERROR</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20250511 20:16:46.056" endtime="20250511 20:16:46.056"/>
+</kw>
+<status status="NOT RUN" starttime="20250511 20:16:46.056" endtime="20250511 20:16:46.056"/>
+</branch>
+<branch type="FINALLY">
+<kw name="Log" library="BuiltIn">
+<arg>Navegador y Selenium Driver cerrado correctamente</arg>
+<arg>level=INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20250511 20:16:46.057" level="INFO">Navegador y Selenium Driver cerrado correctamente</msg>
+<status status="PASS" starttime="20250511 20:16:46.056" endtime="20250511 20:16:46.057"/>
+</kw>
+<status status="PASS" starttime="20250511 20:16:46.056" endtime="20250511 20:16:46.057"/>
+</branch>
+<status status="PASS" starttime="20250511 20:16:43.475" endtime="20250511 20:16:46.057"/>
+</try>
+<doc>Test completo para navegar, interactuar, validar, capturar pantalla y finalizar correctamente.</doc>
+<tag>complete_flow</tag>
+<status status="PASS" starttime="20250511 20:16:16.969" endtime="20250511 20:16:46.058"/>
+</test>
+<status status="PASS" starttime="20250511 20:16:16.654" endtime="20250511 20:16:46.060"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">complete_flow</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Navigation Test">Navigation Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
